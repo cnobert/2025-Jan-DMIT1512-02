@@ -35,10 +35,18 @@ public class SquareController : MonoBehaviour
         float right = topRight.x;
         float top = topRight.y;
         float bottom = bottomLeft.y;
-
-        if(transform.position.x >= 7.33 || transform.position.x <= -7.33)
+        //Debug.Log(GetComponent<Renderer>());
+        //TODO: the game object is bouncing half of its width too late, figure out how to fix
+        float width = GetComponent<Renderer>().bounds.size.x;
+        float height = GetComponent<Renderer>().bounds.size.y;
+        if(transform.position.x + width / 2 >= right || transform.position.x - width / 2 <= left)
         {
             directionX *= -1;
+        }
+
+        if(transform.position.y + height / 2 >= top || transform.position.y - height / 2 <= bottom)
+        {
+            directionY *= -1;
         }
         //Debug.Log(Time.deltaTime); TODO: look into why Time.deltaTime is 0.0009 every call to update
         
