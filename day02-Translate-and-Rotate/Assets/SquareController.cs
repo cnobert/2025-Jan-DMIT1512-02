@@ -59,7 +59,7 @@ public class SquareController : MonoBehaviour
             directionX *= -1;
         }
 
-        if(transform.position.y + height / 2 >= top || transform.position.y - height / 2 <= bottom)
+        if(transform.position.y + (height / 2) >= top || transform.position.y - (height / 2) <= bottom)
         {
             directionY *= -1;
         }
