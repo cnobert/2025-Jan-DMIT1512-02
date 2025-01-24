@@ -288,6 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   spinSpeed: 500
+  scaleSpeed: 20
 --- !u!212 &525787534
 SpriteRenderer:
   m_ObjectHideFlags: 0
