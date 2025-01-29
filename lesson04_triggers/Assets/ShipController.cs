@@ -6,16 +6,37 @@ public class ShipController : MonoBehaviour
     public float movementSpeed;
     private InputAction _moveAction;
 
+    private bool _maxLeftReached = false;
+
     void Start()
     {
         _moveAction = InputSystem.actions.FindAction("Move");
     }
     void Update()
     {
+        //Exercise:
+        //leveraging your new knowledge about Triggers
+        //Make the ship stop when it touches WallLeft. It should be able to move away, to the
+        //right, after it has stopped
+
+
         Vector2 translationValue = _moveAction.ReadValue<Vector2>();
         translationValue.y = 0;
         translationValue *= Time.deltaTime * movementSpeed;
-        transform.Translate(translationValue);
+
+        //is the movement towards the left?
+        //did they reach the maximum distance they can move to the left?
+        if(translationValue.x < 0 && !_maxLeftReached)
+        {
+            transform.Translate(translationValue);
+        }
+
+        if(translationValue.x > 0)
+        {
+            transform.Translate(translationValue);
+        }
+
+        
     }
     /*
         There are three methods that deal with trigger collisions:
@@ -23,8 +44,25 @@ public class ShipController : MonoBehaviour
         OnTriggerStay2D - called every frame during which they are in contact
         OnTriggerExit2D - called when they stop being in contact
     */
+
+    //the "collider2D" parameter is the collider2D of whatever we touched
     void OnTriggerEnter2D(Collider2D collider2D)
     {
-        Debug.Log("---------------On Trigger Enter was called!--------------");
+        _maxLeftReached = true;
+        // GameObject whatIBumpedInto;
+        // whatIBumpedInto = collider2D.gameObject;
+        // Destroy(whatIBumpedInto);
+        //Debug.Log("---------------On Trigger Enter was called!--------------");
     }
+    void OnTriggerExit2D(Collider2D collider2D)
+    {
+        _maxLeftReached = false;
+        //Debug.Log(">>>>>>>>>>>>>>>>>>OnTriggerExit2D<<<<<<<<<<<<<<<<<<<");
+    }
+    
+    
+    // void OnTriggerStay2D(Collider2D collider2D)
+    // {
+    //     //Debug.Log("#################OnTriggerStay2D#################");
+    // }
 }
