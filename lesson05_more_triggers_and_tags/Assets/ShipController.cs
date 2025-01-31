@@ -49,11 +49,12 @@ public class ShipController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collider2D)
     {
         //is whatever I bumped into to the my left?
-        if(collider2D.transform.position.x < transform.position.x)
+        //if(collider2D.transform.position.x < transform.position.x)
+        if(collider2D.CompareTag("WallLeft"))
         {
             _maxLeftReached = true;
         }
-        else //it's to my right
+        if(collider2D.CompareTag("WallRight")) //it's to my right
         {
             _maxRightReached = true;
         }
@@ -61,8 +62,14 @@ public class ShipController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collider2D)
     {
-        _maxLeftReached = false;
-        _maxRightReached = false;
+        if(collider2D.CompareTag("WallLeft"))
+        {
+            _maxLeftReached = false;
+        }
+        if(collider2D.CompareTag("WallRight")) //it's to my right
+        {
+            _maxRightReached = false;
+        }
     }
     
     
