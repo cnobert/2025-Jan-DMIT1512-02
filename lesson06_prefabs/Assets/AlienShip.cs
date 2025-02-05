@@ -3,7 +3,17 @@ using UnityEngine;
 public class AlienShip : MonoBehaviour
 {
     public GameObject projectilePrefab;
-    void Start()
+    public int upperRandomRangeForFiring;
+
+    void Update()
+    {
+        int rando = Random.Range(1, upperRandomRangeForFiring);
+        if(rando == 1)
+        {
+            Fire();
+        }
+    }
+    private void Fire()
     {
         GameObject projectile = Instantiate(projectilePrefab); //creates a prefab object, and brings it into the scene
         //projectile.transform.position = this.transform.position;
@@ -15,12 +25,7 @@ public class AlienShip : MonoBehaviour
         projectile.transform.position = newPosition;
 
         //in-class exercise: set the direction and speed of the projectile from here
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        projectile.GetComponent<Projectile>().direction.y = -1;
+        projectile.GetComponent<Projectile>().speed = 10;
     }
 }
