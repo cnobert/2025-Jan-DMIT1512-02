@@ -1,0 +1,3 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <engine:Label text="Scene 02" style="position: absolute; top: 17px; left: 55px; height: 53px; width: 200px; background-color: rgba(190, 22, 22, 0.76); color: rgb(241, 180, 180); -unity-text-align: upper-center; font-size: 30px;" />
+</engine:UXML>
