@@ -151,7 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 6fb2bac67ef1c4f8daf79687824d732a, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: b377b42f33e9441a18c42d1fad049d3b, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 0be98e2781cbb412ca7bd43fd8f1e35f, type: 3}
   m_SortingOrder: 0
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
@@ -180,7 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1740403460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884c7cc1b1dd7416584528256f435b66, type: 3}
+  m_Script: {fileID: 11500000, guid: 446e17419d5364c2c88f4531626b852a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1773539141
@@ -275,54 +275,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2124321208
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2124321210}
-  - component: {fileID: 2124321209}
-  m_Layer: 0
-  m_Name: GameState
-  m_TagString: GameState
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2124321209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124321208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e0eac40406f54c889b369273d44f1b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2124321210
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2124321208}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4760863, y: 0.3586971, z: 0.0311667}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1773539144}
   - {fileID: 1740403462}
-  - {fileID: 2124321210}

@@ -1,11 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class Scene01_UIComponentHandler : MonoBehaviour
+public class Scene02_UIComponentHandler : MonoBehaviour
 {
     private Label _scoreLabel;
-    private Button _increaseScoreButton;
+    private Button _decreaseScoreButton;
 
     //in any script that needs to read/write game state data, do this:
     //Step #1, declare a gameState data member
@@ -23,19 +22,20 @@ public class Scene01_UIComponentHandler : MonoBehaviour
         _scoreLabel = root.Q<Label>("ScoreLabel");
         _scoreLabel.text = _gameState.Score + "";
 
-        _increaseScoreButton = root.Q<Button>("IncreaseScoreButton");
-        _increaseScoreButton.clicked += IncreaseScore;
+        _decreaseScoreButton = root.Q<Button>("DecreaseScoreButton");
+        _decreaseScoreButton.clicked += DecreaseScore;
 
-        root.Q<Button>("LoadScene02Button").clicked += LoadScene02;
+        root.Q<Button>("LoadScene01Button").clicked += LoadScene01Button;
 
     }
-    private void IncreaseScore()
+    private void DecreaseScore()
     {
-        _gameState.Score++;
+        _gameState.Score--;
         _scoreLabel.text = _gameState.Score.ToString();
     }
-    private void LoadScene02()
+
+    private void LoadScene01Button()
     {
-        SceneManager.LoadScene("Scene02");
+        SceneManager.LoadScene("Scene01");
     }
 }
