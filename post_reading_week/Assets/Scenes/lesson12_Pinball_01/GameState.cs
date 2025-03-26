@@ -2,6 +2,17 @@ using System;
 using System.IO;
 using UnityEngine;
 
+/*
+Notes for Pinball Assignment:
+-our example saves when you click the button
+-but
+-your Pinball game will save whenever a game is complete, and the current score is higher than the high score
+
+also
+-our example saves the entire GameData class, including current score
+-your Pinball game should set current score to zero before saving
+
+*/
 //BE CAREFUL
 //This script must be a component of a game object that is tagged with "GameState"
 //in the OPENING scene of the game
