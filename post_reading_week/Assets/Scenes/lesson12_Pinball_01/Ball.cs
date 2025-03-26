@@ -10,11 +10,19 @@ public class Ball : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        //TODO: put a tag on your bumper and your drop target (for example)
+        //check the tag here and award points based on what the ball hit
         _gameState.Score++;
     }
     void OnTriggerEnter2D(Collider2D collider)
     {
-        //TODO: change a label in this scene to "Game Over", then wait 5 seconds, then do the below
+        //TODO: 
+        // -number of balls should be stored in GameState
+        //- since a ball just hit the DeathZone, decrease the number of balls by one 
+        // -is this the last ball? load the start scene
+        // - OPTIONAL: to make the transition more smooth:
+        //              -change a label in this scene to "Game Over"
+        //              -then wait 5 seconds, then load StartScene
         SceneManager.LoadScene("StartScene");
     }
 }

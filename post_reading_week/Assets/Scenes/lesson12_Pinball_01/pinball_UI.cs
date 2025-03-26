@@ -10,9 +10,13 @@ public class Pinball_UI : MonoBehaviour
     {
         _gameState = GameObject.FindGameObjectWithTag("GameState").GetComponent<GameState>();
         _scoreLabel = GetComponent<UIDocument>().rootVisualElement.Q<Label>("ScoreLabel");
+        _scoreLabel.text = $"{_gameState.Score}";
     }
     void Update()
     {
-        _scoreLabel.text = $"{_gameState.Score}";
+        if(int.Parse(_scoreLabel.text) != _gameState.Score)
+        {
+            _scoreLabel.text = $"{_gameState.Score}";
+        }
     }
 }

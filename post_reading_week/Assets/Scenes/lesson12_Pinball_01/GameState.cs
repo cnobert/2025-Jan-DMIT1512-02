@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using UnityEngine;
 
 //BE CAREFUL
@@ -15,6 +16,7 @@ public class GameState : MonoBehaviour
 {
     private GameData _gameData;
     public int Score { get => _gameData._score; set => _gameData._score = value; }
+    public int HighScore { get => _gameData._highScore; set => _gameData._highScore = value; }
 
     void Awake()
     {
@@ -25,5 +27,29 @@ public class GameState : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void SaveToDisk()
+    {
+        string dataPath = Path.Combine(Application.persistentDataPath, "PinballScores.txt");
+        string jsonString = JsonUtility.ToJson(_gameData);
+        Debug.Log("Saving score to " + Application.persistentDataPath);
+        using(StreamWriter streamWriter = File.CreateText(dataPath))
+        {
+            streamWriter.Write(jsonString);
+            Debug.Log(dataPath);
+        }
+    }
+    public void LoadFromDisk()
+    {
+        string dataPath = Path.Combine(Application.persistentDataPath, "PinballScores.txt");
+        using (StreamReader streamReader = File.OpenText(dataPath))
+        {
+            //get the string that we wrote to the file
+            string jsonString = streamReader.ReadToEnd();
+
+            //convert the string to an object
+            JsonUtility.FromJsonOverwrite(jsonString, _gameData);
+        }
     }
 }
