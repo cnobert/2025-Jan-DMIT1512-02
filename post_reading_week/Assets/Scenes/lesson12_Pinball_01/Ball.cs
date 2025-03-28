@@ -23,6 +23,6 @@ public class Ball : MonoBehaviour
         // - OPTIONAL: to make the transition more smooth:
         //              -change a label in this scene to "Game Over"
         //              -then wait 5 seconds, then load StartScene
-        SceneManager.LoadScene("StartScene");
+        //SceneManager.LoadScene("StartScene");
     }
 }
